@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,32 @@
             align-items: center;
             height: 100vh;
         }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
         form {
+            flex: 1;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            flex: 1;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4caf50;
+            color: #fff;
         }
         label {
             display: block;
@@ -43,23 +64,53 @@
 </head>
 <body>
 
-    <form>
-        <h2>Agendamento de Horários</h2>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+    <div class="container">
+        <form>
+            <h2>Agendamento de Horários</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="horario">Escolha um horário:</label>
-        <select id="horario" name="horario" required>
-            <option value="manha">Manhã</option>
-            <option value="tarde">Tarde</option>
-            <option value="noite">Noite</option>
-        </select>
+            <label for="horario">Escolha um horário:</label>
+            <select id="horario" name="horario" required>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+            </select>
 
-        <button type="submit">Agendar</button>
-    </form>
+            <button type="submit">Agendar</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="7">Agenda - Dezembro</th>
+                </tr>
+                <tr>
+                    <th>Domingo</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Adicione os horários disponíveis para cada dia -->
+                <!-- Este é apenas um exemplo, ajuste conforme necessário -->
+                <tr>
+                    <td colspan="2">8:00 - 9:00</td>
+                    <td>10:00 - 11:00</td>
+                    <td>14:00 - 15:00</td>
+                    <td colspan="2"></td>
+                    <td>18:00 - 19:00</td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
